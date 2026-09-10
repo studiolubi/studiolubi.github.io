@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鱼儿论坛-兴趣交流社区与话题讨论参与指南</title>
+<meta name="description" content="鱼儿论坛是一个面向兴趣交流与话题讨论的社区平台，提供版块浏览、热门话题、发帖互动、新人指南与社区规范，帮助新老用户快速找到同好并参与交流。">
+<meta name="keywords" content="鱼儿论坛,兴趣社区,话题讨论,论坛版块,发帖交流,社区指南">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --sea-deep: #0d3b52;
+  --sea-mid: #14657f;
+  --sea-light: #2a9bb5;
+  --sea-pale: #e6f4f7;
+  --sand: #f7f3ea;
+  --coral: #ef7a5b;
+  --ink: #1d2b31;
+  --ink-soft: #4a6069;
+  --line: #d3e2e7;
+  --white: #ffffff;
+}
+
+body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--sand);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ---------- 顶部栏 ---------- */
+.topbar {
+  background: var(--sea-deep);
+  color: #cfe8ee;
+  font-size: 13px;
+}
+
+.topbar-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.topbar-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.topbar-links a:hover {
+  color: var(--white);
+}
+
+/* ---------- 页眉 ---------- */
+.site-header {
+  background: linear-gradient(135deg, #0d3b52 0%, #14657f 60%, #2a9bb5 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -120px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.header-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 22px 20px 26px;
+  position: relative;
+  z-index: 2;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.brand-text h1 {
+  font-size: 26px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.brand-text p {
+  font-size: 13px;
+  color: #bfe0e8;
+  margin-top: 2px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-solid {
+  background: var(--coral);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.btn-solid:hover {
+  background: #e0653f;
+}
+
+.btn-ghost {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: var(--white);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* ---------- 导航 ---------- */
+.main-nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 10px rgba(13, 59, 82, 0.05);
+}
+
+.nav-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+}
+
+.nav-inner a {
+  padding: 15px 16px;
+  font-size: 15px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-inner a:hover,
+.nav-inner a.active {
+  color: var(--sea-mid);
+  border-bottom-color: var(--sea-light);
+}
+
+/* ---------- 首屏 ---------- */
+.hero {
+  max-width: 1180px;
+  margin: 28px auto 0;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 22px;
+}
+
+.hero-main {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 34px 34px 30px;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(13, 59, 82, 0.06);
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--sea-mid);
+  background: var(--sea-pale);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.hero-main h2 {
+  font-size: 30px;
+  line-height: 1.35;
+  color: var(--sea-deep);
+  margin-bottom: 14px;
+}
+
+.hero-main p {
+  color: var(--ink-soft);
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.hero-points {
+  list-style: none;
+  margin: 18px 0 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 22px;
+}
+
+.hero-points li {
+  font-size: 14px;
+  color: var(--ink-soft);
+  padding-left: 22px;
+  position: relative;
+}
+
+.hero-points li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  color: var(--sea-light);
+  font-size: 11px;
+  top: 4px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--sea-mid);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: var(--sea-deep);
+}
+
+.btn-outline {
+  border-color: var(--sea-light);
+  color: var(--sea-mid);
+}
+
+.btn-outline:hover {
+  background: var(--sea-pale);
+}
+
+.hero-side {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.side-card {
+  background: var(--white);
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  padding: 22px 24px;
+  box-shadow: 0 10px 30px rgba(13, 59, 82, 0.05);
+}
+
+.side-card h3 {
+  font-size: 17px;
+  color: var(--sea-deep);
+  margin-bottom: 14px;
+  padding-left: 12px;
+  border-left: 4px solid var(--sea-light);
+}
+
+.topic-list {
+  list-style: none;
+}
+
+.topic-list li {
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topic-list li:last-child {
+  border-bottom: none;
+}
+
+.topic-list a {
+  color: var(--ink-soft);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topic-list a:hover {
+  color: var(--sea-mid);
+}
+
+.topic-list span {
+  color: #9db4bc;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.stat-item {
+  background: var(--sea-pale);
+  border-radius: 12px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.stat-item strong {
+  display: block;
+  font-size: 20px;
+  color: var(--sea-mid);
+}
+
+.stat-item span {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+/* ---------- 通用区块 ---------- */
+.section {
+  max-width: 1180px;
+  margin: 46px auto 0;
+  padding: 0 20px;
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.section-head h2 {
+  font-size: 23px;
+  color: var(--sea-deep);
+  position: relative;
+  padding-left: 16px;
+}
+
+.section-head h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 5px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--sea-light), var(--sea-mid));
+}
+
+.section-head p {
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+/* ---------- 版块卡片 ---------- */
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.board-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px 22px 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.board-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(13, 59, 82, 0.1);
+}
+
+.board-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 14px;
+  background: var(--sea-pale);
+}
+
+.board-card h3 {
+  font-size: 17px;
+  color: var(--sea-deep);
+  margin-bottom: 8px;
+}
+
+.board-card p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  flex: 1;
+  margin-bottom: 14px;
+}
+
+.board-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #8aa4ad;
+  border-top: 1px dashed var(--line);
+  padding-top: 12px;
+}
+
+/* ---------- 热门话题 ---------- */
+.hot-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 22px;
+}
+
+.article-list {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 8px 24px;
+}
+
+.article-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.article-item:last-child {
+  border-bottom: none;
+}
+
+.article-item h3 {
+  font-size: 16px;
+  color: var(--sea-deep);
+  margin-bottom: 6px;
+}
+
+.article-item h3 a:hover {
+  color: var(--sea-light);
+}
+
+.article-item p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+
+.article-meta {
+  font-size: 12px;
+  color: #8aa4ad;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--sea-mid);
+  background: var(--sea-pale);
+  border-radius: 6px;
+  padding: 2px 8px;
+  margin-right: 6px;
+}
+
+/* ---------- 侧栏指南 ---------- */
+.guide-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.guide-card h3 {
+  font-size: 17px;
+  color: var(--sea-deep);
+  margin-bottom: 14px;
+}
+
+.guide-steps {
+  list-style: none;
+  counter-reset: step;
+}
+
+.guide-steps li {
+  position: relative;
+  padding-left: 38px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.guide-steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--sea-mid);
+  color: var(--white);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guide-steps li strong {
+  display: block;
+  color: var(--ink);
+  font-size: 14.5px;
+  margin-bottom: 2px;
+}
+
+/* ---------- 规范区 ---------- */
+.rules-wrap {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 28px 30px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 34px;
+}
+
+.rule-item h3 {
+  font-size: 16px;
+  color: var(--sea-deep);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rule-item h3 em {
+  font-style: normal;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: var(--sea-pale);
+  color: var(--sea-mid);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rule-item p {
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+/* ---------- FAQ ---------- */
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px 24px;
+}
+
+.faq-item h3 {
+  font-size: 16px;
+  color: var(--sea-deep);
+  margin-bottom: 8px;
+}
+
+.faq-item p {
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+/* ---------- 页脚 ---------- */
+.site-footer {
+  margin-top: 56px;
+  background: var(--sea-deep);
+  color: #b7d4dc;
+  font-size: 14px;
+}
+
+.footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 20px 26px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 28px;
+}
+
+.footer-col h4 {
+  color: var(--white);
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+.footer-col p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #9dc0c9;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 9px;
+}
+
+.footer-col a {
+  font-size: 13px;
+  color: #9dc0c9;
+}
+
+.footer-col a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+  padding: 16px 20px;
+  font-size: 12.5px;
+  color: #8fb2bb;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .board-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hot-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-text h1 {
+    font-size: 21px;
+  }
+
+  .hero-main {
+    padding: 26px 22px 24px;
+  }
+
+  .hero-main h2 {
+    font-size: 23px;
+  }
+
+  .hero-points {
+    grid-template-columns: 1fr;
+  }
+
+  .board-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rules-wrap {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    margin-top: 36px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- 顶部小条 -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>鱼儿论坛 · 兴趣交流社区，欢迎每一位愿意认真表达的朋友</span>
+    <nav class="topbar-links">
+      <a href="#boards">版块导航</a>
+      <a href="#guide">新人指南</a>
+      <a href="#rules">社区规范</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</div>
+
+<!-- 页眉 -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand-row">
+      <div class="brand">
+        <div class="brand-mark">🐟</div>
+        <div class="brand-text">
+          <h1>鱼儿论坛</h1>
+          <p>兴趣交流 · 话题讨论 · 经验分享社区</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a class="btn btn-solid" href="#guide">新人入门</a>
+        <a class="btn btn-ghost" href="#boards">浏览版块</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 导航 -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <a class="active" href="#top">首页</a>
+    <a href="#boards">社区版块</a>
+    <a href="#hot">热门话题</a>
+    <a href="#guide">参与指南</a>
+    <a href="#rules">社区规范</a>
+    <a href="#faq">常见问题</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-main">
+      <span class="hero-tag">社区首页</span>
+      <h2>在鱼儿论坛，找到愿意聊同一件事的人</h2>
+      <p>鱼儿论坛是一个以兴趣与话题为核心的交流社区。无论你是想请教一个具体问题、分享一段亲身经历，还是单纯想找同好聊聊，都可以先从一个版块开始，慢慢熟悉这里的节奏。</p>
+      <p>社区按主题划分版块，讨论以帖子形式沉淀，方便后来的人检索和参考。新用户建议先阅读参与指南与社区规范，再开始发帖与回复。</p>
+      <ul class="hero-points">
+        <li>按兴趣划分的讨论版块</li>
+        <li>可检索的历史话题沉淀</li>
+        <li>新人友好的提问与回复氛围</li>
+        <li>清晰的内容与互动规范</li>
+      </ul>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#boards">进入版块</a>
+        <a class="btn btn-outline" href="#guide">阅读参与指南</a>
+      </div>
+    </div>
+
+    <aside class="hero-side">
+      <div class="side-card">
+        <h3>今日热议</h3>
+        <ul class="topic-list">
+          <li><a href="#hot">新手第一次发帖，怎么写更容易得到回复？</a><span>讨论</span></li>
+          <li><a href="#hot">长期坚持一个兴趣，是怎样的一种体验</a><span>分享</span></li>
+          <li><a href="#hot">遇到观点分歧时，怎样讨论才不伤和气</a><span>交流</span></li>
+          <li><a href="#hot">你最近在社区里学到的一个小技巧</a><span>提问</span></li>
+          <li><a href="#hot">版块内容太多，如何高效找到想要的帖子</a><span>答疑</span></li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h3>社区一览</h3>
+        <div class="stat-grid">
+          <div class="stat-item"><strong>多主题</strong><span>兴趣版块</span></div>
+          <div class="stat-item"><strong>长沉淀</strong><span>历史帖子</span></div>
+          <div class="stat-item"><strong>可检索</strong><span>话题查找</span></div>
+          <div class="stat-item"><strong>有规范</strong><span>交流秩序</span></div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- 版块 -->
+  <section class="section" id="boards">
+    <div class="section-head">
+      <h2>社区版块</h2>
+      <p>按主题进入，找到与你关注方向一致的讨论区</p>
+    </div>
+    <div class="board-grid">
+      <article class="board-card">
+        <div class="board-icon">💬</div>
+        <h3>综合交流区</h3>
+        <p>适合没有明确归属的日常话题、闲聊与经验分享，也是新用户熟悉社区节奏的起点。</p>
+        <div class="board-meta"><span>日常话题</span><span>新人友好</span></div>
+      </article>
+      <article class="board-card">
+        <div class="board-icon">🧭</div>
+        <h3>兴趣分享区</h3>
+        <p>围绕具体兴趣爱好展开的分享与讨论，欢迎晒出你的过程、心得与踩过的坑。</p>
+        <div class="board-meta"><span>兴趣导向</span><span>经验沉淀</span></div>
+      </article>
+      <article class="board-card">
+        <div class="board-icon">❓</div>
+        <h3>求助问答区</h3>
+        <p>提出具体问题、描述清楚背景与已尝试的方法，更容易得到有价值的回复。</p>
+        <div class="board-meta"><span>提问求助</span><span>互助答疑</span></div>
+      </article>
+      <article class="board-card">
+        <div class="board-icon">📚</div>
+        <h3>资料整理区</h3>
+        <p>存放整理类、汇总类内容，方便后来者按图索骥，减少重复提问与信息碎片。</p>
+        <div class="board-meta"><span>内容归档</span><span>便于检索</span></div>
+      </article>
+      <article class="board-card">
+        <div class="board-icon">🛠️</div>
+        <h3>使用反馈区</h3>
+        <p>对社区功能、版块设置、浏览体验提出建议与反馈，帮助社区持续改进。</p>
+        <div class="board-meta"><span>意见反馈</span><span>功能建议</span></div>
+      </article>
+      <article class="board-card">
+        <div class="board-icon">🌱</div>
+        <h3>新人报到区</h3>
+        <p>第一次来到鱼儿论坛，可以在这里简单介绍自己关注的领域，让同好找到你。</p>
+        <div class="board-meta"><span>自我介绍</span><span>找到同好</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 热门话题 -->
+  <section class="section" id="hot">
+    <div class="section-head">
+      <h2>热门话题</h2>
+      <p>近期讨论较多、对新人较有帮助的内容方向</p>
+    </div>
+    <div class="hot-layout">
+      <div class="article-list">
+        <article class="article-item">
+          <h3><a href="#guide">第一次发帖，怎样写才更容易被回复？</a></h3>
+          <p>标题写清问题、正文交代背景与已尝试的做法，能让有经验的人快速判断是否帮得上忙。避免只写一句“有人吗”，也尽量不用模糊的标题。</p>
+          <div class="article-meta"><span class="tag">新人指南</span><span>社区讨论</span><span>参与技巧</span></div>
+        </article>
+        <article class="article-item">
+          <h3><a href="#hot">如何在版块里高效找到自己需要的内容</a></h3>
+          <p>先使用关键词搜索，再按版块或时间浏览；如果找到相近话题，可以在原有帖子下继续讨论，这样信息更集中，也方便后来的人查阅。</p>
+          <div class="article-meta"><span class="tag">检索技巧</span><span>版块使用</span></div>
+        </article>
+        <article class="article-item">
+          <h3><a href="#hot">观点不一致时，怎样讨论更舒服</a></h3>
+          <p>就事论事、针对内容而非针对人，是社区交流的基本共识。表达不同意见时，说明理由比直接下结论更有助于讨论继续。</p>
+          <div class="article-meta"><span class="tag">交流氛围</span><span>社区规范</span></div>
+        </article>
+        <article class="article-item">
+          <h3><a href="#hot">长期记录一个兴趣，会带来什么变化</a></h3>
+          <p>不少用户习惯在社区里持续记录自己的过程，既方便回顾，也能让有相似经历的人少走弯路。记录本身就是一种有价值的分享。</p>
+          <div class="article-meta"><span class="tag">经验分享</span><span>兴趣记录</span></div>
+        </article>
+        <article class="article-item">
+          <h3><a href="#hot">提问时怎样描述背景，才不显得啰嗦</a></h3>
+          <p>把关键信息分点写出来，通常比大段叙述更清晰：你遇到的情况、已经试过什么、希望得到哪方面的建议，三点说清即可。</p>
+          <div class="article-meta"><span class="tag">提问方法</span><span>沟通表达</span></div>
+        </article>
+      </div>
+
+      <aside class="guide-card" id="guide">
+        <h3>新人参与指南</h3>
+        <ol class="guide-steps">
+          <li><strong>先浏览，再开口</strong>花点时间看看版块里的帖子风格，了解大家通常怎么提问、怎么回复。</li>
+          <li><strong>选对版块</strong>把内容发到主题最接近的版块，更容易被关注该话题的人看到。</li>
+          <li><strong>写清标题与背景</strong>标题概括问题，正文补充必要信息，避免让人反复追问。</li>
+          <li><strong>友善回复</strong>对有帮助的回复表达感谢，对不同意见保持耐心，讨论会更顺畅。</li>
+          <li><strong>遵守社区规范</strong>不发布违规内容，不进行人身攻击，共同维护交流环境。</li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 社区规范 -->
+  <section class="section" id="rules">
+    <div class="section-head">
+      <h2>社区规范</h2>
+      <p>几条基本约定，让讨论更顺畅</p>
+    </div>
+    <div class="rules-wrap">
+      <div class="rule-item">
+        <h3><em>1</em>尊重他人</h3>
+        <p>讨论针对内容本身，不针对个人。避免嘲讽、贬低和人身攻击，不同观点也值得被认真对待。</p>
+      </div>
+      <div class="rule-item">
+        <h3><em>2</em>内容相关</h3>
+        <p>发帖尽量与所在版块主题相关，不发布与讨论无关的广告、刷屏或重复内容。</p>
+      </div>
+      <div class="rule-item">
+        <h3><em>3</em>信息真实</h3>
+        <p>分享经验时尽量基于自身经历，不编造事实、不传播无法确认的信息，涉及他人隐私需谨慎处理。</p>
+      </div>
+      <div class="rule-item">
+        <h3><em>4</em>理性讨论</h3>
+        <p>遇到分歧时，说明理由比争输赢更重要。如果讨论难以继续，可以选择暂停或结束对话。</p>
+      </div>
+      <div class="rule-item">
+        <h3><em>5</em>保护隐私</h3>
+        <p>不公开他人可识别的个人信息，也不在公开版块发布自己的敏感信息。</p>
+      </div>
+      <div class="rule-item">
+        <h3><em>6</em>善用举报</h3>
+        <p>遇到违规内容或不当行为，可通过反馈渠道说明情况，由社区管理方按规范处理。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="section-head">
+      <h2>常见问题</h2>
+      <p>新用户经常关心的几个问题</p>
+    </div>
+    <div class="faq-list">
+      <article class="faq-item">
+        <h3>鱼儿论坛主要讨论什么内容？</h3>
+        <p>社区以兴趣与话题交流为主，涵盖日常交流、兴趣分享、求助问答、资料整理等方向。具体内容以各版块的实际讨论为准，建议先浏览版块再决定从哪里开始。</p>
+      </article>
+      <article class="faq-item">
+        <h3>第一次发帖应该注意什么？</h3>
+        <p>先确认版块是否匹配，标题写清核心问题，正文补充必要背景和已经尝试过的方法。信息越具体，越容易得到有针对性的回复。</p>
+      </article>
+      <article class="faq-item">
+        <h3>怎样找到以前讨论过的相似话题？</h3>
+        <p>可以先使用关键词搜索，再按版块或时间顺序浏览。如果已有相近帖子，建议在原帖下继续讨论，这样信息更集中，也方便后续的人查阅。</p>
+      </article>
+      <article class="faq-item">
+        <h3>遇到不友善的回复怎么办？</h3>
+        <p>不必在情绪上纠缠，可以保留记录并通过反馈渠道说明情况。社区规范对人身攻击和不友善行为有明确约束，管理方会按规则处理。</p>
+      </article>
+      <article class="faq-item">
+        <h3>可以发布广告或推广内容吗？</h3>
+        <p>与讨论无关的广告、刷屏和重复推广内容通常不符合社区规范。如果有与主题相关的分享，建议先说明背景，并遵守所在版块的具体要求。</p>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>鱼儿论坛</h4>
+      <p>一个以兴趣交流与话题讨论为核心的社区。希望每一次提问都能得到认真回应，每一次分享都能被看见。</p>
+    </div>
+    <div class="footer-col">
+      <h4>版块导航</h4>
+      <ul>
+        <li><a href="#boards">综合交流区</a></li>
+        <li><a href="#boards">兴趣分享区</a></li>
+        <li><a href="#boards">求助问答区</a></li>
+        <li><a href="#boards">资料整理区</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>参与帮助</h4>
+      <ul>
+        <li><a href="#guide">新人参与指南</a></li>
+        <li><a href="#rules">社区规范</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#hot">热门话题</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>社区提示</h4>
+      <ul>
+        <li><a href="#rules">理性讨论，友善表达</a></li>
+        <li><a href="#rules">保护个人隐私信息</a></li>
+        <li><a href="#faq">善用搜索与反馈</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 鱼儿论坛 · 兴趣交流社区　本站内容由社区用户共同维护，请遵守社区规范。
+  </div>
+</footer>
+
+<script>
+(function () {
+  var navLinks = document.querySelectorAll('.nav-inner a');
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      navLinks.forEach(function (item) {
+        item.classList.remove('active');
+      });
+      link.classList.add('active');
+    });
+  });
+})();
+</script>
+
+</body>
+  </html>
