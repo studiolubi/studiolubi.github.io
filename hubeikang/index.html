@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>湖北康派克-企业产品与解决方案信息首页</title>
+<meta name="description" content="湖北康派克企业信息首页，介绍公司业务方向、核心产品、解决方案、服务流程与常见问题，帮助客户快速了解湖北康派克并获取联系渠道。">
+<meta name="keywords" content="湖北康派克,康派克,湖北企业,产品方案,解决方案,服务支持">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --brand:#0f4c81;
+    --brand-dark:#0a3560;
+    --brand-light:#e8f1f9;
+    --accent:#e8622c;
+    --ink:#1c2530;
+    --ink-soft:#4a5665;
+    --line:#dfe5ec;
+    --bg:#f5f7fa;
+    --white:#ffffff;
+    --radius:10px;
+    --shadow:0 6px 20px rgba(15,76,129,.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Microsoft YaHei","PingFang SC","Helvetica Neue",Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+
+  .wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 20px;}
+
+  /* 顶部信息条 */
+  .topbar{
+    background:var(--brand-dark);
+    color:#c9dcee;
+    font-size:13px;
+  }
+  .topbar .wrap{
+    display:flex;justify-content:space-between;align-items:center;
+    min-height:38px;flex-wrap:wrap;gap:6px;
+  }
+  .topbar span{display:inline-block;}
+
+  /* 页眉导航 */
+  header.site-header{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+    box-shadow:0 2px 10px rgba(15,76,129,.05);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    min-height:72px;gap:20px;
+  }
+  .logo{display:flex;align-items:center;gap:12px;}
+  .logo-mark{
+    width:44px;height:44px;border-radius:8px;
+    background:linear-gradient(135deg,var(--brand),#2f7fbf);
+    color:#fff;font-weight:700;font-size:19px;
+    display:flex;align-items:center;justify-content:center;
+    letter-spacing:1px;
+  }
+  .logo-text strong{display:block;font-size:19px;letter-spacing:1px;color:var(--brand-dark);}
+  .logo-text small{display:block;font-size:12px;color:var(--ink-soft);letter-spacing:.5px;}
+
+  nav.main-nav ul{display:flex;gap:6px;flex-wrap:wrap;}
+  nav.main-nav a{
+    display:block;padding:8px 14px;border-radius:6px;
+    font-size:15px;color:var(--ink-soft);transition:.2s;
+  }
+  nav.main-nav a:hover,nav.main-nav a.active{
+    background:var(--brand-light);color:var(--brand-dark);font-weight:600;
+  }
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(120deg,#0f4c81 0%,#1a6ba8 55%,#2f8fc9 100%);
+    color:#fff;padding:64px 0 58px;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-120px;
+    width:420px;height:420px;border-radius:50%;
+    background:rgba(255,255,255,.07);
+  }
+  .hero::before{
+    content:"";position:absolute;left:-80px;bottom:-160px;
+    width:300px;height:300px;border-radius:50%;
+    background:rgba(255,255,255,.05);
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);
+    padding:4px 14px;border-radius:20px;font-size:13px;
+    letter-spacing:1px;margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:34px;line-height:1.4;font-weight:700;
+    letter-spacing:1px;margin-bottom:16px;max-width:760px;
+  }
+  .hero p.lead{
+    font-size:16px;color:#d8e9f7;max-width:680px;margin-bottom:26px;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:11px 26px;border-radius:8px;
+    font-size:15px;font-weight:600;transition:.2s;cursor:pointer;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:#d1531f;}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55);}
+  .btn-ghost:hover{background:rgba(255,255,255,.14);}
+
+  /* 快速锚点 */
+  .quick-links{
+    background:var(--white);border-bottom:1px solid var(--line);
+  }
+  .quick-links ul{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  }
+  .quick-links li{border-right:1px solid var(--line);}
+  .quick-links li:last-child{border-right:none;}
+  .quick-links a{
+    display:block;padding:18px 16px;text-align:center;transition:.2s;
+  }
+  .quick-links a:hover{background:var(--brand-light);}
+  .quick-links strong{display:block;font-size:15px;color:var(--brand-dark);margin-bottom:2px;}
+  .quick-links span{font-size:12.5px;color:var(--ink-soft);}
+
+  /* 通用区块 */
+  section.block{padding:56px 0;}
+  section.block.alt{background:var(--white);}
+  .section-head{margin-bottom:32px;}
+  .section-head .eyebrow{
+    font-size:13px;color:var(--accent);letter-spacing:2px;font-weight:700;
+    text-transform:uppercase;margin-bottom:6px;display:block;
+  }
+  .section-head h2{
+    font-size:25px;color:var(--brand-dark);letter-spacing:.5px;position:relative;
+    padding-bottom:12px;
+  }
+  .section-head h2::after{
+    content:"";position:absolute;left:0;bottom:0;
+    width:52px;height:3px;background:var(--accent);border-radius:2px;
+  }
+  .section-head p.desc{
+    margin-top:12px;color:var(--ink-soft);font-size:15px;max-width:780px;
+  }
+
+  /* 业务卡片 */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px;transition:.25s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#c3d8ea;}
+  .card .icon{
+    width:46px;height:46px;border-radius:9px;background:var(--brand-light);
+    color:var(--brand);display:flex;align-items:center;justify-content:center;
+    font-size:20px;font-weight:700;margin-bottom:16px;
+  }
+  .card h3{font-size:17px;color:var(--brand-dark);margin-bottom:10px;}
+  .card p{font-size:14.5px;color:var(--ink-soft);}
+  .card ul{margin-top:10px;}
+  .card ul li{
+    font-size:14px;color:var(--ink-soft);padding-left:16px;position:relative;margin-bottom:5px;
+  }
+  .card ul li::before{
+    content:"";position:absolute;left:0;top:10px;
+    width:6px;height:6px;border-radius:50%;background:var(--accent);
+  }
+
+  /* 产品列表 */
+  .product-list{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .product-item{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;display:flex;gap:16px;transition:.25s;
+  }
+  .product-item:hover{box-shadow:var(--shadow);border-color:#c3d8ea;}
+  .product-no{
+    flex:0 0 46px;height:46px;border-radius:8px;
+    background:var(--brand);color:#fff;font-weight:700;font-size:16px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .product-item h3{font-size:16px;color:var(--brand-dark);margin-bottom:8px;}
+  .product-item p{font-size:14px;color:var(--ink-soft);}
+
+  /* 流程 */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step;}
+  .step{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 20px;position:relative;
+  }
+  .step::before{
+    counter-increment:step;content:"0" counter(step);
+    position:absolute;top:-16px;left:20px;
+    background:var(--accent);color:#fff;font-size:13px;font-weight:700;
+    padding:3px 10px;border-radius:20px;letter-spacing:1px;
+  }
+  .step h3{font-size:16px;color:var(--brand-dark);margin:10px 0 8px;}
+  .step p{font-size:14px;color:var(--ink-soft);}
+
+  /* 优势条 */
+  .advantages{background:var(--brand-dark);color:#fff;padding:52px 0;}
+  .advantages .section-head h2{color:#fff;}
+  .advantages .section-head p.desc{color:#bfd6ea;}
+  .adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .adv{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);padding:22px 20px;
+  }
+  .adv strong{display:block;font-size:16px;margin-bottom:8px;color:#fff;}
+  .adv p{font-size:13.8px;color:#c6dcef;}
+
+  /* 常见问题 */
+  .faq-list{display:flex;flex-direction:column;gap:14px;max-width:900px;}
+  .faq-item{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px;
+  }
+  .faq-item h3{
+    font-size:16px;color:var(--brand-dark);margin-bottom:8px;
+    display:flex;gap:10px;align-items:flex-start;
+  }
+  .faq-item h3 .q{
+    flex:0 0 24px;height:24px;border-radius:6px;background:var(--brand-light);
+    color:var(--brand);font-size:13px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .faq-item p{font-size:14.5px;color:var(--ink-soft);padding-left:34px;}
+
+  /* 联系 */
+  .contact{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:34px;display:grid;grid-template-columns:1.2fr 1fr;gap:34px;
+  }
+  .contact h2{font-size:22px;color:var(--brand-dark);margin-bottom:14px;}
+  .contact p{font-size:15px;color:var(--ink-soft);margin-bottom:10px;}
+  .contact-info dl{display:grid;grid-template-columns:88px 1fr;gap:10px 12px;font-size:14.5px;}
+  .contact-info dt{color:var(--ink-soft);}
+  .contact-info dd{color:var(--brand-dark);font-weight:600;}
+  .contact-note{
+    margin-top:16px;font-size:13px;color:var(--ink-soft);
+    background:var(--brand-light);border-left:3px solid var(--brand);
+    padding:12px 14px;border-radius:0 6px 6px 0;
+  }
+
+  /* 页脚 */
+  footer.site-footer{
+    background:#0a2a4a;color:#a9c4dc;padding:44px 0 22px;font-size:14px;
+  }
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px;
+    padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .footer-grid h3{color:#fff;font-size:15px;margin-bottom:14px;}
+  .footer-grid p{font-size:13.5px;color:#9db9d3;line-height:1.8;}
+  .footer-grid li{margin-bottom:8px;}
+  .footer-grid a{font-size:13.5px;color:#a9c4dc;transition:.2s;}
+  .footer-grid a:hover{color:#fff;}
+  .copyright{
+    padding-top:18px;text-align:center;font-size:13px;color:#7f9dba;
+  }
+
+  /* 响应式 */
+  @media (max-width:980px){
+    .grid-3{grid-template-columns:repeat(2,1fr);}
+    .steps{grid-template-columns:repeat(2,1fr);}
+    .adv-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:repeat(2,1fr);}
+    .contact{grid-template-columns:1fr;}
+  }
+  @media (max-width:720px){
+    .header-inner{flex-direction:column;align-items:flex-start;padding:14px 0;gap:10px;}
+    nav.main-nav ul{gap:2px;}
+    nav.main-nav a{padding:7px 10px;font-size:14px;}
+    .hero{padding:46px 0 42px;}
+    .hero h1{font-size:25px;}
+    .quick-links ul{grid-template-columns:repeat(2,1fr);}
+    .quick-links li:nth-child(2){border-right:none;}
+    .quick-links li:nth-child(1),
+    .quick-links li:nth-child(2){border-bottom:1px solid var(--line);}
+    .grid-3,.grid-2,.product-list,.steps,.adv-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:20px;}
+    section.block{padding:40px 0;}
+    .contact{padding:24px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>湖北康派克 · 企业信息展示页</span>
+    <span>业务咨询与合作请通过页面下方联系方式获取</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="logo">
+      <div class="logo-mark">康</div>
+      <div class="logo-text">
+        <strong>湖北康派克</strong>
+        <small>产品 · 方案 · 服务</small>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <ul>
+        <li><a href="#about" class="active">关于我们</a></li>
+        <li><a href="#business">业务方向</a></li>
+        <li><a href="#products">产品与方案</a></li>
+        <li><a href="#service">服务流程</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="hero-tag">湖北本地企业 · 专注产品与解决方案</span>
+      <h1>湖北康派克：了解公司业务、产品方向与合作方式</h1>
+      <p class="lead">
+        如果你正在搜索“湖北康派克”，通常是想确认这家企业做什么、有哪些产品或服务、如何联系合作。
+        本页围绕这些核心问题，集中呈现湖北康派克的业务方向、产品与解决方案、服务流程及常见疑问，
+        帮助你快速建立清晰认识，并找到合适的沟通入口。
+      </p>
+      <div class="hero-actions">
+        <a href="#business" class="btn btn-primary">查看业务方向</a>
+        <a href="#contact" class="btn btn-ghost">获取联系方式</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 快速锚点 -->
+  <div class="quick-links">
+    <div class="wrap">
+      <ul>
+        <li><a href="#about"><strong>企业概况</strong><span>了解基本信息与定位</span></a></li>
+        <li><a href="#products"><strong>产品与方案</strong><span>查看主要业务内容</span></a></li>
+        <li><a href="#service"><strong>服务流程</strong><span>合作如何推进</span></a></li>
+        <li><a href="#faq"><strong>常见问题</strong><span>解答高频疑问</span></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 关于 -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">About</span>
+        <h2>关于湖北康派克</h2>
+        <p class="desc">
+          湖北康派克是一家位于湖北省的企业，围绕自身业务方向，为客户提供产品、方案与相关服务支持。
+          由于不同客户的需求差异较大，实际合作内容以双方沟通确认的范围为准。
+        </p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="icon">企</div>
+          <h3>企业定位</h3>
+          <p>
+            立足湖北本地市场，以务实的经营方式服务客户，重视产品与服务的稳定性，
+            并根据客户实际场景提供适配的方案建议。
+          </p>
+          <ul>
+            <li>面向本地及周边区域的客户需求</li>
+            <li>以产品和服务能力为合作基础</li>
+            <li>沟通透明，需求确认后再推进</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">合</div>
+          <h3>合作理念</h3>
+          <p>
+            我们更看重长期、稳定的合作关系。在项目启动前充分了解客户的目标与约束条件，
+            避免信息不对称带来的返工与消耗。
+          </p>
+          <ul>
+            <li>先明确需求，再讨论方案</li>
+            <li>关键节点保持信息同步</li>
+            <li>关注交付后的持续使用体验</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 业务方向 -->
+  <section class="block alt" id="business">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Business</span>
+        <h2>主要业务方向</h2>
+        <p class="desc">
+          湖北康派克的业务围绕客户实际使用场景展开，通常包含以下几类方向。
+          具体是否适用，需要结合你的需求与实际情况沟通后确定。
+        </p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">01</div>
+          <h3>产品供应与配套</h3>
+          <p>
+            根据客户需求提供相应产品及配套内容，注重规格匹配与实际使用效果，
+            在选型阶段提供必要的说明与建议。
+          </p>
+        </article>
+        <article class="card">
+          <div class="icon">02</div>
+          <h3>方案设计与建议</h3>
+          <p>
+            结合客户的使用环境、规模与预算范围，给出可执行的方案思路，
+            帮助客户在多个选项之间做出更合适的判断。
+          </p>
+        </article>
+        <article class="card">
+          <div class="icon">03</div>
+          <h3>服务与技术支持</h3>
+          <p>
+            在产品或方案投入使用后，提供相应的沟通与支持渠道，
+            协助客户处理使用过程中出现的常规问题。
+          </p>
+        </article>
+        <article class="card">
+          <div class="icon">04</div>
+          <h3>定制化需求对接</h3>
+          <p>
+            对于有特殊要求的客户，可在明确需求边界后评估可行性，
+            再决定是否进入定制化合作流程。
+          </p>
+        </article>
+        <article class="card">
+          <div class="icon">05</div>
+          <h3>长期合作与维护</h3>
+          <p>
+            对于有持续需求的客户，可建立相对稳定的对接机制，
+            减少重复沟通成本，提高协作效率。
+          </p>
+        </article>
+        <article class="card">
+          <div class="icon">06</div>
+          <h3>区域客户服务</h3>
+          <p>
+            以湖北为核心服务区域，兼顾周边地区客户的实际沟通与协作需要，
+            具体服务范围以沟通结果为准。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 产品与方案 -->
+  <section class="block" id="products">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Products</span>
+        <h2>产品与解决方案概览</h2>
+        <p class="desc">
+          以下为湖北康派克业务内容的分类概览，便于你快速定位自己关心的部分。
+          如需了解具体规格、参数或适配情况，建议直接与我们沟通确认。
+        </p>
+      </div>
+      <div class="product-list">
+        <article class="product-item">
+          <div class="product-no">A</div>
+          <div>
+            <h3>标准产品方向</h3>
+            <p>面向常规使用场景的产品内容，适合需求相对明确、希望快速推进的客户。</p>
+          </div>
+        </article>
+        <article class="product-item">
+          <div class="product-no">B</div>
+          <div>
+            <h3>场景化方案方向</h3>
+            <p>针对特定使用环境进行组合与调整，强调方案与现场条件的匹配度。</p>
+          </div>
+        </article>
+        <article class="product-item">
+          <div class="product-no">C</div>
+          <div>
+            <h3>配套服务方向</h3>
+            <p>围绕产品使用过程提供沟通、说明与常规支持，降低客户的使用门槛。</p>
+          </div>
+        </article>
+        <article class="product-item">
+          <div class="product-no">D</div>
+          <div>
+            <h3>定制与协作方向</h3>
+            <p>在需求明确、条件允许的前提下，评估定制化合作的可行性与推进方式。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 服务流程 -->
+  <section class="block alt" id="service">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Process</span>
+        <h2>合作与服务流程</h2>
+        <p class="desc">
+          为了让沟通更高效，我们通常按以下步骤推进合作。实际流程会根据项目复杂度做适当调整。
+        </p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>需求沟通</h3>
+          <p>了解你的使用场景、目标与基本条件，明确需要解决的核心问题。</p>
+        </div>
+        <div class="step">
+          <h3>方案建议</h3>
+          <p>根据沟通结果给出方向性建议，说明可选范围与需要注意的事项。</p>
+        </div>
+        <div class="step">
+          <h3>确认与推进</h3>
+          <p>双方就内容、范围与节奏达成一致后，进入正式推进阶段。</p>
+        </div>
+        <div class="step">
+          <h3>服务与跟进</h3>
+          <p>在交付或使用过程中保持沟通，协助处理常规问题与后续需求。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 优势 -->
+  <section class="advantages">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Why Us</span>
+        <h2>选择湖北康派克时可以参考的几点</h2>
+        <p class="desc">以下为我们在日常合作中持续关注的方向，供你在评估时参考。</p>
+      </div>
+      <div class="adv-grid">
+        <div class="adv">
+          <strong>本地沟通便利</strong>
+          <p>位于湖北，便于区域内客户进行面对面或高频次的沟通协作。</p>
+        </div>
+        <div class="adv">
+          <strong>需求导向</strong>
+          <p>先理解需求再给建议，避免脱离实际使用条件的方案堆砌。</p>
+        </div>
+        <div class="adv">
+          <strong>信息透明</strong>
+          <p>在能力范围内如实说明可行与不可行之处，减少后续误解。</p>
+        </div>
+        <div class="adv">
+          <strong>重视长期关系</strong>
+          <p>关注合作之后的持续使用体验，而非一次性的沟通结果。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>关于湖北康派克的常见问题</h2>
+        <p class="desc">整理了一些搜索与咨询中出现频率较高的问题，供你快速参考。</p>
+      </div>
+      <div class="faq-list">
+        <article class="faq-item">
+          <h3><span class="q">Q</span>湖北康派克主要做什么？</h3>
+          <p>
+            湖北康派克围绕自身业务方向，为客户提供产品、方案与服务支持。
+            具体内容会因客户需求不同而有所差异，建议先说明你的使用场景，我们再给出对应说明。
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3><span class="q">Q</span>如何确认是否适合与我合作？</h3>
+          <p>
+            最直接的方式是把你的需求、使用环境和大致预期告知我们，由双方共同判断匹配度。
+            如果条件不合适，我们也会如实说明。
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3><span class="q">Q</span>服务范围是否仅限湖北？</h3>
+          <p>
+            湖北是主要服务区域，周边地区也可根据实际情况沟通。
+            具体能否覆盖，需要结合项目内容与执行条件确认。
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3><span class="q">Q</span>是否支持定制化需求？</h3>
+          <p>
+            对于有明确定制需求的客户，我们会在评估可行性后给出回复。
+            定制内容通常需要更充分的沟通与确认，推进节奏也会相应调整。
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3><span class="q">Q</span>合作前需要准备哪些信息？</h3>
+          <p>
+            建议提前梳理使用场景、规模、时间要求和预算范围等基本信息。
+            信息越清晰，沟通效率越高，方案建议也越有针对性。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="block alt" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>联系湖北康派克</h2>
+          <p>
+            如果你希望进一步了解产品、方案或合作方式，可以通过以下渠道与我们取得联系。
+            沟通时请尽量说明你的需求背景，便于我们更快给出有价值的回复。
+          </p>
+          <p>
+            我们建议在首次沟通中明确三件事：你希望解决的问题、当前的使用条件、
+            以及大致的时间安排。这样双方都能更高效地判断下一步。
+          </p>
+          <div class="contact-note">
+            提示：本页面为企业信息展示页，具体产品参数、服务范围与合作条件以双方正式沟通确认为准。
+          </div>
+        </div>
+        <div class="contact-info">
+          <dl>
+            <dt>企业名称</dt>
+            <dd>湖北康派克</dd>
+            <dt>所在地区</dt>
+            <dd>湖北省</dd>
+            <dt>业务方向</dt>
+            <dd>产品 · 方案 · 服务支持</dd>
+            <dt>合作方式</dt>
+            <dd>需求沟通后确认</dd>
+            <dt>服务区域</dt>
+            <dd>湖北为主，周边可沟通</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>湖北康派克</h3>
+        <p>
+          围绕产品、方案与服务支持开展业务，立足湖北，服务有实际需求的客户，
+          重视沟通效率与长期合作关系。
+        </p>
+      </div>
+      <div>
+        <h3>页面导航</h3>
+        <ul>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#business">业务方向</a></li>
+          <li><a href="#products">产品与方案</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>服务信息</h3>
+        <ul>
+          <li><a href="#service">服务流程</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#contact">联系方式</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>沟通建议</h3>
+        <ul>
+          <li>提前梳理使用场景</li>
+          <li>说明规模与时间要求</li>
+          <li>明确预算参考范围</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      © 湖北康派克 企业信息展示页 · 内容以实际沟通确认为准
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var links = document.querySelectorAll('nav.main-nav a');
+    var sections = [];
+    links.forEach(function(a){
+      var id = a.getAttribute('href');
+      if(id && id.charAt(0) === '#'){
+        var el = document.querySelector(id);
+        if(el){ sections.push({link:a, el:el}); }
+      }
+    });
+    if(!sections.length) return;
+
+    function onScroll(){
+      var pos = window.scrollY + 120;
+      var current = sections[0];
+      sections.forEach(function(item){
+        if(item.el.offsetTop <= pos){ current = item; }
+      });
+      links.forEach(function(a){ a.classList.remove('active'); });
+      if(current && current.link){ current.link.classList.add('active'); }
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+</script>
+
+</body>
+  </html>
